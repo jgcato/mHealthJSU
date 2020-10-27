@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "mhealthjsu1f8692ea": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

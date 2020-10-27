@@ -1,0 +1,20 @@
+{
+  "native": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mhealthjsu-native-124722-authRole",
+      "UnauthRoleArn": "arn:aws:iam::593034128105:role/amplify-mhealthjsu-native-124722-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::593034128105:role/amplify-mhealthjsu-native-124722-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-mhealthjsu-native-124722-deployment",
+      "UnauthRoleName": "amplify-mhealthjsu-native-124722-unauthRole",
+      "StackName": "amplify-mhealthjsu-native-124722",
+      "StackId": "arn:aws:cloudformation:us-east-1:593034128105:stack/amplify-mhealthjsu-native-124722/c2859880-16e1-11eb-b99c-0a0703eab8ad",
+      "AmplifyAppId": "d6lwy762mpd34"
+    },
+    "categories": {
+      "auth": {
+        "mhealthjsu1f8692ea": {}
+      }
+    }
+  }
+}
