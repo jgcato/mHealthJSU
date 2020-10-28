@@ -1,3 +1,5 @@
+//this styling is for the signIn, signUp, forgotPassword, confirmSignUp, changePassword components
+
 import {StyleSheet, Dimensions} from 'react-native';
 
 const windowWidth = Dimensions.get('window').width;

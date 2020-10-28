@@ -8,27 +8,11 @@ import ConfirmSignUp from './src/components/ConfirmSignUp';
 import SignIn from './src/components/SignIn';
 import ForgotPassword from './src/components/ForgotPassword';
 import ChangePassword from './src/components/ChangePassword';
+import Homepage from './src/components/Homepage';
 
 Amplify.configure(awsconfig); //loads config file for AWS Amplify
 
 LogBox.ignoreAllLogs(true); //ignores some pesky AWS warnings
-
-function Home(props) {
-  //homepage
-  if (props.authState === 'signedIn') {
-    return (
-      <View>
-        <Text>HOME</Text>
-        <Button //backToSignIn
-          onPress={() => props.onStateChange('signIn', {})}
-          title="back to sign in"
-          color="black"
-          accessibilityLabel="back to sign in"
-        />
-      </View>
-    );
-  } else return <></>;
-}
 
 export default function App() {
   return (
@@ -38,7 +22,7 @@ export default function App() {
         hideDefault={true}
         authState="signIn"
         onStateChange={(authState) => console.log('authState...', authState)}>
-        <Home />
+        <Homepage />
         <SignUp />
         <SignIn />
         <ConfirmSignUp />
