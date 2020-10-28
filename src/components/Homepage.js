@@ -18,9 +18,6 @@ export default function Homepage(props) {
             accessibilityLabel="sign out"
           />
         </View>
-        <View style={styles.topView}>
-          <Text>Hello!</Text>
-        </View>
       </View>
     );
   } else return <></>;
@@ -33,11 +30,5 @@ const styles = StyleSheet.create({
     top: -360,
     paddingTop: 10,
     paddingLeft: 10,
-  },
-  topView: {
-    backgroundColor: 'gray',
-    width: windowWidth,
-    height: windowHeight - 470,
-    bottom: 400,
   },
 });
