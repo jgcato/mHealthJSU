@@ -9,9 +9,9 @@ export default function Homepage(props) {
     return (
       <View>
         <Text>HOME</Text>
-        <View>
+        <View style={styles.signOut}>
           <Button
-            style={styles.signIn} //backToSignIn
+            //backToSignIn
             onPress={() => props.onStateChange('signIn', {})}
             title="sign out"
             color="black"
@@ -24,9 +24,8 @@ export default function Homepage(props) {
 }
 
 const styles = StyleSheet.create({
-  signIn: {
-    position: 'absolute',
-    left: 120,
+  signOut: {
+    left: 150,
     top: -360,
     paddingTop: 10,
     paddingLeft: 10,
