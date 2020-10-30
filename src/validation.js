@@ -1,10 +1,10 @@
-// export function validateEmail(email) {
-//   if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-//     return 'Enter a valid email address!';
-//   } else return null;
-// }
-
 export function validateEmail(email) {
+  if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+    return 'Enter a valid email address!';
+  } else return null;
+}
+
+export function validateJSUEmail(email) {
   //checks if email is a JSU email address
   if (
     !(
