@@ -1,6 +1,20 @@
+// export function validateEmail(email) {
+//   if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+//     return 'Enter a valid email address!';
+//   } else return null;
+// }
+
 export function validateEmail(email) {
-  if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-    return 'Enter a valid email address!';
+  //checks if email is a JSU email address
+  if (
+    !(
+      /^[a-zA-Z0-9._-]+@[jsumsJSUMS.-]+\.[eduEDU]{2,4}$/.test(email) ||
+      /^[a-zA-Z0-9._-]+@[studentsSTUDENTS.-]+[jsumsJSUMS.-]+\.[eduEDU]{2,4}$/.test(
+        email,
+      )
+    )
+  ) {
+    return 'Enter a JSU email address!';
   } else return null;
 }
 
