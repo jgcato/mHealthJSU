@@ -45,11 +45,10 @@ export default function ForgotPassword(props) {
         <View style={FormStyles.bgcontainer}>
           <Text style={FormStyles.title}>Forgot Password</Text>
           <View style={FormStyles.labelWrapper}>
-            <Icon name="email" size={13} style={FormStyles.labelIcon} />
             <Text style={FormStyles.labelText}> Email </Text>
           </View>
           <TextInput
-            style={FormStyles.textbox}
+            style={FormStyles.input}
             autoCompleteType="email"
             onChangeText={(text) => onChange({name: 'email', value: text})}
             value={values.email}
@@ -59,7 +58,7 @@ export default function ForgotPassword(props) {
           <TouchableOpacity style={FormStyles.button} onPress={onSubmit}>
             <Text style={FormStyles.buttonText}>Send</Text>
           </TouchableOpacity>
-          <View style={FormStyles.formLinks}>
+          <View style={FormStyles.links}>
             <TouchableWithoutFeedback
               onPress={() => props.onStateChange('signIn', {})}>
               <Text style={FormStyles.linkText}>Back to Sign In</Text>

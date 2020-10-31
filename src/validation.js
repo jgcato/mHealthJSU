@@ -1,6 +1,6 @@
 export function validateEmail(email) {
   if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-    return 'Enter a valid email address!';
+    return 'Enter a valid JSUemail address!';
   } else return null;
 }
 

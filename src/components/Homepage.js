@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, Button, StyleSheet, Dimensions} from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -10,13 +11,11 @@ export default function Homepage(props) {
       <View>
         <Text>HOME</Text>
         <View style={styles.signOut}>
-          <Button
+          <TouchableOpacity 
             //backToSignIn
-            onPress={() => props.onStateChange('signIn', {})}
-            title="sign out"
-            color="black"
-            accessibilityLabel="sign out"
-          />
+            onPress={() => props.onStateChange('signIn', {})}>
+            <Text>sign out</Text>
+            </TouchableOpacity>
         </View>
       </View>
     );
@@ -27,7 +26,8 @@ const styles = StyleSheet.create({
   signOut: {
     left: 150,
     top: -360,
-    paddingTop: 10,
-    paddingLeft: 10,
+    padding: 6,
+    backgroundColor: 'gray',
+    borderRadius: 5,
   },
 });
