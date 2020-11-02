@@ -49,5 +49,10 @@ export default function Homepage(props) {
 const styles = StyleSheet.create({
   signOut: {
     color: '#fff',
+    fontWeight: 'bold',
+    borderWidth: 2,
+    borderRadius: 8,
+    borderColor: "#fff",
+    padding: 4,
   },
 });
