@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import {FormStyles} from '../styles/FormStyles';
+import {FormStyles} from '../../styles/FormStyles';
 
 export default function ErrorMessage(props) {
   const {error, setError} = props;

@@ -7,9 +7,9 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
-import {validateEmail, validatePassword} from '../validation'; //error handling is imported from here
+import {validateEmail, validatePassword} from './validation'; //error handling is imported from here
 import {Auth} from 'aws-amplify';
-import {FormStyles} from '../styles/FormStyles'; //styles are imported from here
+import {FormStyles} from '../../styles/FormStyles'; //styles are imported from here
 
 export default function SignIn(props) {
   const [state, setState] = useState({

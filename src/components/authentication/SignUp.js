@@ -7,9 +7,9 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
-import {validateJSUEmail, validatePassword} from '../validation'; //error handling is imported from here
+import {validateJSUEmail, validatePassword} from './validation'; //error handling is imported from here
 import {Auth} from 'aws-amplify';
-import {FormStyles} from '../styles/FormStyles'; //styles are imported from here
+import {FormStyles} from '../../styles/FormStyles'; //styles are imported from here
 
 export default function SignUp(props) {
   const [state, setState] = useState({
@@ -72,14 +72,14 @@ export default function SignUp(props) {
         </Text>
 
         <TouchableOpacity
-        //sign up button
+          //sign up button
           style={FormStyles.button}
           onPress={() => onSubmit()}>
           <Text style={FormStyles.buttonText}>Sign Up</Text>
         </TouchableOpacity>
 
         <View
-        //encompasses "back to Sign In" & "back to Sign Up" buttons
+          //encompasses "back to Sign In" & "back to Sign Up" buttons
           style={FormStyles.links}>
           <Button //back to signIn
             onPress={() => props.onStateChange('signIn', {})}

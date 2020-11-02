@@ -3,12 +3,12 @@ import {View, Text, StyleSheet, LogBox, Button} from 'react-native';
 import Amplify, {authState} from 'aws-amplify';
 import awsconfig from './aws-exports';
 import {Authenticator, ConfirmSignIn} from 'aws-amplify-react-native';
-import SignUp from './src/components/SignUp';
-import ConfirmSignUp from './src/components/ConfirmSignUp';
-import SignIn from './src/components/SignIn';
-import ForgotPassword from './src/components/ForgotPassword';
-import ChangePassword from './src/components/ChangePassword';
-import Homepage from './src/components/Homepage';
+import SignUp from './src/components/authentication/SignUp';
+import ConfirmSignUp from './src/components/authentication/ConfirmSignUp';
+import SignIn from './src/components/authentication/SignIn';
+import ForgotPassword from './src/components/authentication/ForgotPassword';
+import ChangePassword from './src/components/authentication/ChangePassword';
+import Homepage from './src/components/pages/Homepage';
 
 Amplify.configure(awsconfig); //loads config file for AWS Amplify
 

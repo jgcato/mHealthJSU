@@ -8,9 +8,9 @@ import {
 } from 'react-native';
 import {Auth} from 'aws-amplify';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import {FormStyles} from '../styles/FormStyles';
-import useForm from '../useForm';
-import {validateEmail} from '../validation';
+import {FormStyles} from '../../styles/FormStyles';
+import useForm from '../../useForm';
+import {validateEmail} from './validation';
 
 export default function ForgotPassword(props) {
   const initialValues = {email: ''};
@@ -61,11 +61,11 @@ export default function ForgotPassword(props) {
           <View style={FormStyles.links}>
             <TouchableWithoutFeedback
               onPress={() => props.onStateChange('signIn', {})}>
-              <Text style={FormStyles.linkText}>Back to Sign In</Text>
+              <Text style={FormStyles.links}>Back to Sign In</Text>
             </TouchableWithoutFeedback>
             <TouchableWithoutFeedback
               onPress={() => props.onStateChange('changePassword', {})}>
-              <Text style={FormStyles.linkText}>Change Password</Text>
+              <Text style={FormStyles.links}>Change Password</Text>
             </TouchableWithoutFeedback>
           </View>
           {error && <Text style={FormStyles.error}>{error}</Text>}

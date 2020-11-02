@@ -7,9 +7,9 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
-import {validateJSUEmail} from '../validation'; //error handling imported from here
+import {validateJSUEmail} from './validation'; //error handling imported from here
 import {Auth} from 'aws-amplify';
-import {FormStyles} from '../styles/FormStyles'; //styling imported from here
+import {FormStyles} from '../../styles/FormStyles'; //styling imported from here
 
 export default function ConfirmSignUp(props) {
   const [state, setState] = useState({
