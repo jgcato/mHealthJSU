@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
-import {validateEmail} from '../validation'; //error handling imported from here
+import {validateJSUEmail} from '../validation'; //error handling imported from here
 import {Auth} from 'aws-amplify';
 import {FormStyles} from '../styles/FormStyles'; //styling imported from here
 
@@ -22,7 +22,7 @@ export default function ConfirmSignUp(props) {
   async function onSubmit() {
     const {email: username, confirmationCode: code} = state; //email renamed to username, confirmation code renamed to code
     //displays errors for email and password when entered incorrectly
-    const emailError = validateEmail(state.email);
+    const emailError = validateJSUEmail(state.email);
     if (emailError) setErrors({email: emailError});
     else {
       try {
