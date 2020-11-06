@@ -6,12 +6,17 @@ import {
   StyleSheet,
   Dimensions,
 } from 'react-native';
-import {Header} from 'react-native-elements';
+import {Header, Button} from 'react-native-elements';
 import {Auth} from 'aws-amplify';
-import { color } from 'react-native-reanimated';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import NavDrawer from './navDrawer';
+import {NavigationContainer, useNavigation} from '@react-navigation/native';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import Homepage from '../components/pages/Homepage';
+import FAQs from '../components/pages/FAQs';
 
 const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
+//const windowHeight = Dimensions.get('window').height;
 
 function SignOut(props) {
   return (
@@ -25,32 +30,53 @@ function SignOut(props) {
   );
 }
 
-export default function GlobalHeader(headerText) {
+export default function GlobalHeader({headerText}) {
   return (
-    <View>
+    <View style={styles.container}>
       <Header
         // eslint-disable-next-line react-native/no-inline-styles
         containerStyle={{
-          height: 150,
-          top: -380,
+          height: 100,
           width: windowWidth,
-          backgroundColor: 'darkblue',
+          backgroundColor: 'white',
+          paddingBottom: 20,
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
-        leftComponent={{icon: 'menu', color: '#fff'}}
-        centerComponent={{text: headerText, style: {color: '#fff'}}}
+        leftComponent={
+          <Ionicons name="person-circle-outline" size={30} color="#4F8EF7" />
+        }
+        centerComponent={{
+          text: {headerText},
+          style: {
+            color: '#4F8EF7',
+            fontWeight: 'bold',
+            fontSize: 20,
+          },
+        }}
         rightComponent={<SignOut />}
+        placement="center"
       />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   signOut: {
-    color: '#fff',
+    color: '#4F8EF7',
     fontWeight: 'bold',
     borderWidth: 1.7,
     borderRadius: 8,
-    borderColor: '#fff',
+    borderColor: '#4F8EF7',
     padding: 4,
+  },
+  center: {
+    color: 'darkblue',
+    fontWeight: 'bold',
+    fontSize: 20,
+    justifyContent: 'center',
   },
 });
