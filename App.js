@@ -27,6 +27,9 @@ import MentalHealth from './src/components/pages/mentalHealth';
 import Motivation from './src/components/pages/motivation';
 import Tips from './src/components/pages/tips';
 import Youtube from './src/components/pages/youtube';
+import {globalStyles} from './src/styles/global';
+import GlobadHeader from './src/shared/globalHeader';
+import ScreenHeader from './src/shared/screensHeader';
 
 Amplify.configure(awsconfig); //loads config file for AWS Amplify
 
@@ -36,18 +39,39 @@ const Stack = createStackNavigator();
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-function HomeStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Homepage" component={Homepage} />
-      <Stack.Screen name="FAQs" component={FAQs} />
-      <Stack.Screen name="Tips" component={Tips} />
-      <Stack.Screen name="Youtube" component={Youtube} />
-      <Stack.Screen name="Campus Services" component={CampusServices} />
-      <Stack.Screen name="Motivation" component={Motivation} />
-      <Stack.Screen name="Mental Health" component={MentalHealth} />
-    </Stack.Navigator>
-  );
+function HomeStack(props) {
+  if (props.authState === 'signedIn') {
+    return (
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            height: 70,
+            backgroundColor: '#eee',
+          },
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}>
+        <Stack.Screen
+          name="Homepage"
+          component={Homepage}
+          options={{headerTitle: () => <GlobadHeader headerText="Home" />}}
+        />
+        <Stack.Screen
+          name="FAQs"
+          component={FAQs}
+          // options={{headerTitle: () => <ScreenHeader headerText="FAQs" navigation={navigation}/>}}
+        />
+        <Stack.Screen name="Tips" component={Tips} />
+        <Stack.Screen name="Youtube" component={Youtube} />
+        <Stack.Screen name="Campus Services" component={CampusServices} />
+        <Stack.Screen name="Motivation" component={Motivation} />
+        <Stack.Screen name="Mental Health" component={MentalHealth} />
+      </Stack.Navigator>
+    );
+  } else {
+    return <></>; //if "confirm sign up" not pressed, return nothing
+  }
 }
 
 export default function App() {
@@ -56,35 +80,27 @@ export default function App() {
       onPress={() => {
         Keyboard.dismiss();
       }}>
-      <SafeAreaView style={styles.container}>
+      {/* <SafeAreaView style={styles.safearea}> */}
+      <View style={globalStyles.container}>
         <NavigationContainer>
-          <View>
-            <Authenticator
-              usernameAttributes="email"
-              hideDefault={true}
-              authState="signIn"
-              onStateChange={(authState) =>
-                console.log('authState...', authState)
-              }>
-              <HomeStack />
-              <SignUp />
-              <SignIn />
-              <ConfirmSignUp />
-              <ConfirmSignIn />
-              <ForgotPassword />
-              <ChangePassword />
-            </Authenticator>
-          </View>
+          <Authenticator
+            usernameAttributes="email"
+            hideDefault={true}
+            authState="signIn"
+            onStateChange={(authState) =>
+              console.log('authState...', authState)
+            }>
+            <HomeStack />
+            <SignUp />
+            <SignIn />
+            <ConfirmSignUp />
+            <ConfirmSignIn />
+            <ForgotPassword />
+            <ChangePassword />
+          </Authenticator>
         </NavigationContainer>
-      </SafeAreaView>
+      </View>
+      {/* </SafeAreaView> */}
     </TouchableWithoutFeedback>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});

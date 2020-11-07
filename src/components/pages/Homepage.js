@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, Dimensions} from 'react-native';
 import Dashboard from 'react-native-dashboard';
 import GlobalHeader from '../../shared/globalHeader';
 import FAQs from './FAQs';
@@ -32,6 +32,7 @@ const navigation = useNavigation();
   return (
     <View style={styles.container}>
       {/* <GlobalHeader headerText="Home" /> */}
+      <Text>What is your mood?</Text>
       <Button
         icon={<FontAwesome5 name="question-circle" size={15} color="red" />}
         title="FAQs"
@@ -101,15 +102,15 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     borderRadius: 100,
-    width: 125,
-    height: 125,
+    width: 100,
+    height: 100,
     justifyContent: 'center',
     margin: 4,
     marginBottom: 8,
     flexDirection: 'column',
   },
   buttonTitle: {
-    fontSize: 12,
+    fontSize: 15,
     fontWeight: 'bold',
   },
 });
