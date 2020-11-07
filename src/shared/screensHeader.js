@@ -18,17 +18,6 @@ import FAQs from '../components/pages/FAQs';
 const windowWidth = Dimensions.get('window').width;
 //const windowHeight = Dimensions.get('window').height;
 
-function GoBack() {
-  const navigation = useNavigation();
-  return (
-    <View>
-      <TouchableOpacity onPress={navigation.GoBack()}>
-        <Ionicons name="arrow-back" size={30} color="#4F8EF7" />
-      </TouchableOpacity>
-    </View>
-  );
-}
-
 function SignOut(props) {
   return (
     <View>
@@ -42,6 +31,16 @@ function SignOut(props) {
 }
 
 export default function ScreenHeader({headerText, navigation}) {
+  function GoBack() {
+    return (
+      <View>
+        <TouchableOpacity onPress={navigation.GoBack()}>
+          <Ionicons name="arrow-back" size={30} color="#4F8EF7" />
+        </TouchableOpacity>
+      </View>
+    );
+  }
+
   return (
     <View style={styles.container}>
       <Header
