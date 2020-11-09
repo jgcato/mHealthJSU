@@ -38,14 +38,12 @@ export default function GlobalHeader({headerText}) {
       <Header
         // eslint-disable-next-line react-native/no-inline-styles
         containerStyle={{
-          height: 130,
+          height: 110,
           width: windowWidth,
           backgroundColor: 'white',
           paddingBottom: 20,
           justifyContent: 'center',
           alignItems: 'center',
-          borderBottomLeftRadius: 40,
-          borderBottomRightRadius: 40,
         }}
         centerComponent={{
           text: headerText,
@@ -65,6 +63,7 @@ export default function GlobalHeader({headerText}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+
   },
   signOut: {
     color: '#4F8EF7',

@@ -27,13 +27,34 @@ export default function FAQs() {
           }}
         />
       </View>
-      <View>
+      <View style={styles.container}>
         <Text style={styles.question}>Who is going to pay for my surgery?</Text>
         <Text>
           Anything your personal insurance company does not cover will be
           covered by Jackson State Athletic Dept.  Your insurance is primary and
           JSU’s is secondary. If you don’t have insurance JSU will take care of
           everything.
+        </Text>
+        <Text style={styles.question}>
+          Who is going to take me to my appointments?{' '}
+        </Text>
+        <Text>
+          A Jackson State Athletic Dept. staff member will take you if are
+          unable to drive yourself, no friend/family is able to take you to your
+          appointment and/or your injury prevents you from being able to drive.
+        </Text>
+        <Text style={styles.question}>How do I red shirt? </Text>
+        <Text>
+          Contact Mrs. Christina Ross (christina.t.ross@jsums.edu) in compliance
+          to start the paperwork then follow up with the trainer
+        </Text>
+        <Text style={styles.question}>Where do I get a knee scooter </Text>
+        <Text>
+          The training staff will do their best to find you one if there is one
+          available. However, you are ultimately responsible for obtaining your
+          own knee scooter as Jackson State does not cover that cost. The
+          Mississippi Sports Medicine offices will be give you a prescription
+          for a knee scooter and a list of places to get one.
         </Text>
       </View>
     </View>
@@ -43,7 +64,9 @@ export default function FAQs() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 45,
+    margin: 30,
+    justifyContent: 'center',
+    alignContent: 'center',
   },
   heading: {
     fontSize: 40,
@@ -56,5 +79,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 20,
     paddingTop: 10,
+    alignContent: 'center',
   },
 });

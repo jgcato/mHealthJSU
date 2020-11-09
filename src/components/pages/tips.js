@@ -6,13 +6,14 @@ import DoctorsOffice from './Tips Screens/doctorsoffice';
 import KneeScooter from './Tips Screens/kneescooter';
 import Nutrition from './Tips Screens/nutrition';
 import { NavItem } from 'aws-amplify-react';
+import { SafeAreaView } from 'react-navigation';
 
 const Tab = createMaterialTopTabNavigator();
 
 function MyTabs() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Knee-Scooter" component={KneeScooter} />
+      <Tab.Screen name="Knee-Scooter" component={KneeScooter}/>
       <Tab.Screen name="Crutches" component={Crutches} />
       <Tab.Screen name="Nutrition" component={Nutrition} />
       <Tab.Screen name="Doctor's Office" component={DoctorsOffice} />

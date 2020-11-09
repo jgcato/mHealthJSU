@@ -10,6 +10,8 @@ import {
 import {validateJSUEmail, validatePassword} from './validation'; //error handling is imported from here
 import {Auth} from 'aws-amplify';
 import {FormStyles} from '../../styles/FormStyles'; //styles are imported from here
+import {Input} from 'react-native-elements';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 export default function SignUp(props) {
   const [state, setState] = useState({
@@ -44,12 +46,20 @@ export default function SignUp(props) {
       <View style={FormStyles.container}>
         <Text style={FormStyles.title}>Sign Up</Text>
         <Text style={FormStyles.label}>Email</Text>
-        <TextInput //email input field 
+        {/* <TextInput //email input field
           style={FormStyles.input}
           onChangeText={(text) =>
             setState({...state, email: text.toLowerCase()})
           }
           placeholder="enter email"
+          value={state.email}
+        /> */}
+        <Input
+          placeholder=" Enter a JSU email"
+          leftIcon={<FontAwesome5 name="envelope" size={20} color="black" />}
+          onChangeText={(text) =>
+            setState({...state, email: text.toLowerCase()})
+          }
           value={state.email}
         />
         <Text
@@ -58,10 +68,17 @@ export default function SignUp(props) {
           {error.email}
         </Text>
         <Text style={FormStyles.label}>Password</Text>
-        <TextInput //password input field
+        {/* <TextInput //password input field
           style={FormStyles.input}
           onChangeText={(text) => setState({...state, password: text})}
           placeholder="enter password"
+          value={state.password}
+          secureTextEntry={true}
+        /> */}
+         <Input
+          placeholder=" Enter password"
+          leftIcon={<FontAwesome5 name="lock" size={20} color="black" />}
+          onChangeText={(text) => setState({...state, password: text})}
           value={state.password}
           secureTextEntry={true}
         />

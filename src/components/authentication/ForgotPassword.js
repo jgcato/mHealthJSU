@@ -11,6 +11,8 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {FormStyles} from '../../styles/FormStyles';
 import useForm from '../../useForm';
 import {validateEmail} from './validation';
+import {Input} from 'react-native-elements';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 export default function ForgotPassword(props) {
   const initialValues = {email: ''};
@@ -45,14 +47,21 @@ export default function ForgotPassword(props) {
         <View style={FormStyles.bgcontainer}>
           <Text style={FormStyles.title}>Forgot Password</Text>
           <View style={FormStyles.labelWrapper}>
-            <Text style={FormStyles.labelText}> Email </Text>
+            <Text style={FormStyles.label}> Email </Text>
           </View>
-          <TextInput
+          {/* <TextInput
             style={FormStyles.input}
             autoCompleteType="email"
             onChangeText={(text) => onChange({name: 'email', value: text})}
             value={values.email}
             placeholder="Enter Email"
+          /> */}
+          <Input
+            autoCompleteType="email"
+            placeholder=" Enter a JSU email"
+            leftIcon={<FontAwesome5 name="envelope" size={20} color="black" />}
+            onChangeText={(text) => onChange({name: 'email', value: text})}
+            value={values.email}
           />
           {errors.email && <Text style={FormStyles.error}>{errors.email}</Text>}
           <TouchableOpacity style={FormStyles.button} onPress={onSubmit}>

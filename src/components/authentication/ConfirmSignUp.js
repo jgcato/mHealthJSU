@@ -10,6 +10,8 @@ import {
 import {validateJSUEmail} from './validation'; //error handling imported from here
 import {Auth} from 'aws-amplify';
 import {FormStyles} from '../../styles/FormStyles'; //styling imported from here
+import {Input} from 'react-native-elements';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 export default function ConfirmSignUp(props) {
   const [state, setState] = useState({
@@ -44,12 +46,12 @@ export default function ConfirmSignUp(props) {
       <View style={FormStyles.container}>
         <Text style={FormStyles.title}>Confirm Sign Up</Text>
         <Text style={FormStyles.label}>Email</Text>
-        <TextInput //email input field
-          style={FormStyles.input}
+        <Input //email input field
+          leftIcon={<FontAwesome5 name="envelope" size={20} color="black" />}
           onChangeText={(text) =>
             setState({...state, email: text.toLowerCase()})
           }
-          placeholder="enter email"
+          placeholder="Enter email"
           value={state.email}
         />
         <Text
@@ -58,10 +60,10 @@ export default function ConfirmSignUp(props) {
           {error.email}
         </Text>
         <Text style={FormStyles.label}>Confirmation Code</Text>
-        <TextInput //confirmation code input field
-          style={FormStyles.input}
+        <Input //confirmation code input field
+          leftIcon={<FontAwesome5 name="lock" size={20} color="black" />}
           onChangeText={(text) => setState({...state, confirmationCode: text})}
-          placeholder="enter confirmation code"
+          placeholder="Enter confirmation code"
           value={state.confirmationCode}
         />
 

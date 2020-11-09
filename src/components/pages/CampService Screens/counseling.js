@@ -5,6 +5,8 @@ export default function Counseling() {
   return (
     <View style={styles.container}>
       <Text>Counseling</Text>
+      <Text>Latasha Norman Center Info</Text>
+      <Text>Other campus counseling here</Text>
     </View>
   );
 }
@@ -12,6 +14,6 @@ export default function Counseling() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 45,
+    margin: 10,
   },
 });

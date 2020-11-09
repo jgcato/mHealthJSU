@@ -10,6 +10,7 @@ import {Auth} from 'aws-amplify';
 import {FormStyles} from '../../styles/FormStyles';
 import useForm from '../../useForm';
 import {validateEmail, validatePassword, validateCode} from './validation';
+import {Input} from 'react-native-elements';
 
 export default function ChangePassword(props) {
   const initialValues = {email: '', confirmationCode: '', password: ''};
@@ -46,14 +47,13 @@ export default function ChangePassword(props) {
       <View style={FormStyles.container}>
         <View style={FormStyles.bgcontainer}>
           <Text style={FormStyles.title}>Change Password</Text>
-          <Text style={{textAlign: 'center', paddingBottom:15}}>
+          <Text style={{textAlign: 'center', paddingBottom: 15, color: 'red'}}>
             check your email for a verificaiton code
           </Text>
           <View style={FormStyles.labelWrapper}>
             <Text style={FormStyles.labelText}> Email *</Text>
           </View>
-          <TextInput
-            style={FormStyles.input}
+          <Input
             placeholder="Email"
             placeholderTextColor="#808389"
             type="text"
@@ -65,8 +65,7 @@ export default function ChangePassword(props) {
             <Text style={FormStyles.labelText}> Confirmation Code *</Text>
           </View>
 
-          <TextInput
-            style={FormStyles.input}
+          <Input
             placeholder="Enter your confirmation code"
             placeholderTextColor="#808389"
             type="text"
@@ -81,9 +80,8 @@ export default function ChangePassword(props) {
           <View style={FormStyles.labelWrapper}>
             <Text style={FormStyles.labelText}> New Password *</Text>
           </View>
-          <TextInput
+          <Input
             secureTextEntry={true}
-            style={FormStyles.input}
             placeholder="New Password"
             placeholderTextColor="#808389"
             type="password"

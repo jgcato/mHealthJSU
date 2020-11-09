@@ -17,10 +17,13 @@ export const FormStyles = StyleSheet.create({
     height: 40,
     borderRadius: 5,
     justifyContent: 'center',
+    marginBottom: 5,
   },
   buttonText: {
     textTransform: 'uppercase',
-    color: 'white',
+    color: '#4F8EF7',
+    fontWeight: 'bold',
+    fontSize: 20,
     textAlign: 'center',
   },
   input: {
@@ -37,12 +40,23 @@ export const FormStyles = StyleSheet.create({
   },
   title: {
     textAlign: 'center',
-    fontSize: 24,
+    fontSize: 30,
+    marginBottom: 15,
     fontWeight: '600',
+    color: 'black'
+  },
+  signintitle: {
+    textAlign: 'center',
+    fontSize: 30,
+    marginBottom: 15,
+    fontWeight: '600',
+    color: '#4F8EF7'
   },
   label: {
     marginLeft: 5,
-    marginBottom: 5,
+    marginBottom: 2,
+    fontSize: 18,
+    fontWeight: '200',
   },
   error: {
     color: 'red',

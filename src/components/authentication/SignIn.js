@@ -10,6 +10,8 @@ import {
 import {validateEmail, validatePassword} from './validation'; //error handling is imported from here
 import {Auth} from 'aws-amplify';
 import {FormStyles} from '../../styles/FormStyles'; //styles are imported from here
+import {Input} from 'react-native-elements';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 export default function SignIn(props) {
   const [state, setState] = useState({
@@ -42,14 +44,14 @@ export default function SignIn(props) {
     //code will run when in 'signIp' state
     return (
       <View style={FormStyles.container}>
-        <Text style={FormStyles.title}>Sign In</Text>
+        <Text style={FormStyles.signintitle}>Sign In</Text>
         <Text style={FormStyles.label}>Email</Text>
-        <TextInput //email input field
-          style={FormStyles.input}
+        <Input
+          placeholder=" Enter email address"
+          leftIcon={<FontAwesome5 name="envelope" size={20} color="#4F8EF7" />}
           onChangeText={(text) =>
             setState({...state, email: text.toLowerCase()})
           }
-          placeholder="enter email"
           value={state.email}
         />
         <Text
@@ -58,10 +60,10 @@ export default function SignIn(props) {
           {error.email}
         </Text>
         <Text style={FormStyles.label}>Password</Text>
-        <TextInput //password input field
-          style={FormStyles.input}
+        <Input
+          placeholder=" Enter password"
+          leftIcon={<FontAwesome5 name="lock" size={20} color="#4F8EF7" />}
           onChangeText={(text) => setState({...state, password: text})}
-          placeholder="enter password"
           value={state.password}
           secureTextEntry={true}
         />

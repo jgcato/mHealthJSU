@@ -109,7 +109,7 @@ export default function App() {
       onPress={() => {
         Keyboard.dismiss();
       }}>
-      {/* <SafeAreaView style={styles.safearea}> */}
+      {/* <SafeAreaView> */}
       <View style={globalStyles.container}>
         <NavigationContainer>
           <Authenticator
