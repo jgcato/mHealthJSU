@@ -12,6 +12,6 @@ export default function Youtube() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    margin: 45,
   },
 });

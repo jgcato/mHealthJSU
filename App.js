@@ -39,7 +39,7 @@ const Stack = createStackNavigator();
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-function HomeStack(props) {
+function HomeStack(props, {navigation}) {
   if (props.authState === 'signedIn') {
     return (
       <Stack.Navigator
@@ -60,13 +60,42 @@ function HomeStack(props) {
         <Stack.Screen
           name="FAQs"
           component={FAQs}
-          // options={{headerTitle: () => <ScreenHeader headerText="FAQs" navigation={navigation}/>}}
+          options={{headerTitle: () => <ScreenHeader headerText="FAQs" />}}
         />
-        <Stack.Screen name="Tips" component={Tips} />
-        <Stack.Screen name="Youtube" component={Youtube} />
-        <Stack.Screen name="Campus Services" component={CampusServices} />
-        <Stack.Screen name="Motivation" component={Motivation} />
-        <Stack.Screen name="Mental Health" component={MentalHealth} />
+        <Stack.Screen
+          name="Tips"
+          component={Tips}
+          options={{headerTitle: () => <ScreenHeader headerText="Tips" />}}
+        />
+        <Stack.Screen
+          name="Youtube"
+          component={Youtube}
+          options={{
+            headerTitle: () => <ScreenHeader headerText="Youtube Library" />,
+          }}
+        />
+        <Stack.Screen
+          name="Campus Services"
+          component={CampusServices}
+          options={{
+            headerTitle: () => <ScreenHeader headerText="Campus Services" />,
+          }}
+        />
+        <Stack.Screen
+          name="Motivation"
+          component={Motivation}
+          options={{
+            headerTitle: () => <ScreenHeader headerText="Motivation" />,
+          }}
+        />
+        <Stack.Screen
+          name="Mental Health"
+          component={MentalHealth}
+          options={{
+            headerTitle: () => <ScreenHeader headerText="Mental Health" />,
+          }}
+        />
+        <Stack.Screen name="Screen Header" component={ScreenHeader} />
       </Stack.Navigator>
     );
   } else {

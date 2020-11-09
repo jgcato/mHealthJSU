@@ -9,6 +9,7 @@ import {
 import {Header, Button} from 'react-native-elements';
 import {Auth} from 'aws-amplify';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import NavDrawer from './navDrawer';
 import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
@@ -25,6 +26,7 @@ function SignOut(props) {
         //backToSignIn
         onPress={() => Auth.signOut()}>
         <Text style={styles.signOut}>sign out</Text>
+        {/* <FontAwesome5 name="sign-out-alt" size={25} color="#4F8EF7" /> */}
       </TouchableOpacity>
     </View>
   );
@@ -36,22 +38,21 @@ export default function GlobalHeader({headerText}) {
       <Header
         // eslint-disable-next-line react-native/no-inline-styles
         containerStyle={{
-          height: 100,
+          height: 130,
           width: windowWidth,
           backgroundColor: 'white',
           paddingBottom: 20,
           justifyContent: 'center',
           alignItems: 'center',
+          borderBottomLeftRadius: 40,
+          borderBottomRightRadius: 40,
         }}
-        leftComponent={
-          <Ionicons name="person-circle-outline" size={30} color="#4F8EF7" />
-        }
         centerComponent={{
-          text: {headerText},
+          text: headerText,
           style: {
             color: '#4F8EF7',
             fontWeight: 'bold',
-            fontSize: 20,
+            fontSize: 40,
           },
         }}
         rightComponent={<SignOut />}

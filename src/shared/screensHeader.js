@@ -30,11 +30,12 @@ function SignOut(props) {
   );
 }
 
-export default function ScreenHeader({headerText, navigation}) {
-  function GoBack() {
+export default function ScreenHeader({headerText}) {
+  const navigation = useNavigation();
+  function Back() {
     return (
       <View>
-        <TouchableOpacity onPress={navigation.GoBack()}>
+        <TouchableOpacity onPress={() => navigation.navigate('Homepage')}>
           <Ionicons name="arrow-back" size={30} color="#4F8EF7" />
         </TouchableOpacity>
       </View>
@@ -53,9 +54,9 @@ export default function ScreenHeader({headerText, navigation}) {
           justifyContent: 'center',
           alignItems: 'center',
         }}
-        leftComponent={<GoBack />}
+        leftComponent={<Back />}
         centerComponent={{
-          text: {headerText},
+          text: headerText,
           style: {
             color: '#4F8EF7',
             fontWeight: 'bold',

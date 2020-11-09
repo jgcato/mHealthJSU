@@ -32,6 +32,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 // }
 
 export default function Homepage() {
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
