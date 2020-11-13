@@ -9,8 +9,8 @@ const Tab = createMaterialTopTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="ADA Info" component={Ada} />
       <Tab.Screen name="Counseling" component={Counseling} />
+      <Tab.Screen name="ADA Info" component={Ada} />
     </Tab.Navigator>
   );
 }

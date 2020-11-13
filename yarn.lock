@@ -2002,6 +2002,13 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@dooboo-ui/native-accordion@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@dooboo-ui/native-accordion/-/native-accordion-0.7.0.tgz#111c89d1dc638f181d8d1aa03285a1cc01d95892"
+  integrity sha512-rnSjTbUMhFzINvLX4nYeegDMjvbUCHB5F6WJ5oNAVOEu1ppvkeczpG2b3vCwZuCuo0dzUH9bq9vaievLdiJUXQ==
+  dependencies:
+    dooboolab-welcome "^1.1.1"
+
 "@egjs/hammerjs@^2.0.17":
   version "2.0.17"
   resolved "https://registry.yarnpkg.com/@egjs/hammerjs/-/hammerjs-2.0.17.tgz#5dc02af75a6a06e4c2db0202cae38c9263895124"
@@ -4355,6 +4362,11 @@ domexception@^1.0.1:
   integrity sha512-raigMkn7CJNNo6Ihro1fzG7wr3fHuYVytzquZKX5n0yizGsTcYgzdIUwj1X9pK0VvjeihV+XiclP+DjwbsSKug==
   dependencies:
     webidl-conversions "^4.0.2"
+
+dooboolab-welcome@^1.1.1:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/dooboolab-welcome/-/dooboolab-welcome-1.2.0.tgz#295818ce85a8e97dc90c0ec0510b4008e2d722dc"
+  integrity sha512-XgEbjJHAsKLge/e8jtuHsv84Ovg1Gx0GvnOTOmOlVGV1643nduTAkT3fyo/mxKbzvyXBr47RHaJAY4R2toI0UA==
 
 ecc-jsbn@~0.1.1:
   version "0.1.2"

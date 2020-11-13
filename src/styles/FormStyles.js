@@ -17,7 +17,11 @@ export const FormStyles = StyleSheet.create({
     height: 40,
     borderRadius: 5,
     justifyContent: 'center',
-    marginBottom: 5,
+    marginBottom: 7,
+    shadowRadius: 4,
+    shadowOpacity: 1,
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 1},
   },
   buttonText: {
     textTransform: 'uppercase',
@@ -43,14 +47,18 @@ export const FormStyles = StyleSheet.create({
     fontSize: 30,
     marginBottom: 15,
     fontWeight: '600',
-    color: 'black'
+    color: 'black',
+    paddingBottom: 20,
+    paddingTop: 20,
   },
   signintitle: {
     textAlign: 'center',
     fontSize: 30,
     marginBottom: 15,
     fontWeight: '600',
-    color: '#4F8EF7'
+    color: '#4F8EF7',
+    paddingTop: 20,
+    paddingBottom: 15,
   },
   label: {
     marginLeft: 5,
@@ -62,5 +70,34 @@ export const FormStyles = StyleSheet.create({
     color: 'red',
     paddingBottom: 10,
     marginLeft: 10,
+  },
+  bottomview: {
+    right: 20,
+    top: 100,
+    backgroundColor: '#F0F8FF',
+    width: windowWidth,
+    height: 750,
+    borderRadius: 30,
+    padding: 13,
+    shadowRadius: 20,
+    shadowOpacity: 1,
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 20}
+  },
+  logo: {
+    width: 300,
+    height: 100,
+    alignSelf: 'center',
+    top: 60,
+  },
+  logocontainer: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  imageheader: {
+    width: windowWidth,
+    alignSelf: 'center',
+    height: 140,
+    top: 145,
   },
 });

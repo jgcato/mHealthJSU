@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   StyleSheet,
   Dimensions,
+  SafeAreaView
 } from 'react-native';
 import {Header, Button} from 'react-native-elements';
 import {Auth} from 'aws-amplify';
@@ -63,7 +64,6 @@ export default function GlobalHeader({headerText}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-
   },
   signOut: {
     color: '#4F8EF7',

@@ -1,0 +1,45 @@
+ DROP-DOWN COMPONENT:
+ {/* <ScrollView style={{alignSelf: 'stretch',}}>
+        {this.state.contents
+          ? this.state.contents.map((param, i) => {
+              return (
+                <Accordion
+                  key={i}
+                  //style={styles.Accordion}
+                  contentVisible={false}
+                  // visibleElement={<StyledImage source={IC_ARR_UP} />}
+                  // invisibleElement={<StyledImage source={IC_ARR_DOWN} />}
+                  header={
+                    <View>
+                      <Text
+                        style={{
+                          fontSize: 16,
+                          color: 'black',
+                          fontWeight: 'bold',
+                          marginLeft: 10,
+                          alignSelf: 'center',
+                        }}>
+                        {param.title}
+                        <FontAwesome5
+                          name="chevron-down"
+                          size={15}
+                          color="red"
+                        />
+                      </Text>
+                    </View>
+                  }>
+                  <Text
+                    style={[
+                      {
+                        fontSize: 15,
+                        flexWrap: 'wrap',
+                      },
+                    ]}>
+                    {param.body}
+                  </Text>
+                </Accordion>
+              );
+            })
+          : null}
+        {/* <View style={{height: 96}} /> */}
+      {/* </ScrollView> */} 

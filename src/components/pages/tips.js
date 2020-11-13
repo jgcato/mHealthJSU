@@ -1,19 +1,20 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet, Image, Dimensions} from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import Crutches from './Tips Screens/crutches';
 import DoctorsOffice from './Tips Screens/doctorsoffice';
 import KneeScooter from './Tips Screens/kneescooter';
 import Nutrition from './Tips Screens/nutrition';
-import { NavItem } from 'aws-amplify-react';
-import { SafeAreaView } from 'react-navigation';
+import {NavItem} from 'aws-amplify-react';
+import {SafeAreaView} from 'react-navigation';
 
+const windowWidth = Dimensions.get('window').width;
 const Tab = createMaterialTopTabNavigator();
 
 function MyTabs() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Knee-Scooter" component={KneeScooter}/>
+      <Tab.Screen name="Knee-Scooter" component={KneeScooter} />
       <Tab.Screen name="Crutches" component={Crutches} />
       <Tab.Screen name="Nutrition" component={Nutrition} />
       <Tab.Screen name="Doctor's Office" component={DoctorsOffice} />
@@ -24,6 +25,16 @@ function MyTabs() {
 export default function Tips() {
   return (
     <View style={styles.container}>
+      <Image
+        style={{
+          width: 380,
+          height: 120,
+          alignSelf: 'center',
+          marginTop: 5,
+          marginBottom: 20,
+        }}
+        source={require('../assets/appPics/plants.jpg')}
+      />
       <MyTabs />
     </View>
   );

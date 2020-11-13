@@ -5,6 +5,7 @@ import {
   TextInput,
   TouchableOpacity,
   TouchableWithoutFeedback,
+  Image,
 } from 'react-native';
 import {Auth} from 'aws-amplify';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -13,6 +14,7 @@ import useForm from '../../useForm';
 import {validateEmail} from './validation';
 import {Input} from 'react-native-elements';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import {Divider} from 'react-native-paper';
 
 export default function ForgotPassword(props) {
   const initialValues = {email: ''};
@@ -45,40 +47,61 @@ export default function ForgotPassword(props) {
     return (
       <View style={FormStyles.container}>
         <View style={FormStyles.bgcontainer}>
-          <Text style={FormStyles.title}>Forgot Password</Text>
-          <View style={FormStyles.labelWrapper}>
-            <Text style={FormStyles.label}> Email </Text>
-          </View>
-          {/* <TextInput
+        <Image
+          style={FormStyles.logo}
+          source={require('../assets/logos/pawlogo.png')}
+        />
+          <View style={FormStyles.bottomview}>
+            <Text style={FormStyles.title}>Forgot Password</Text>
+            <Divider
+              style={{
+                backgroundColor: 'black',
+                height: 2,
+                width: 250,
+                borderRadius: 2,
+                alignSelf: 'center',
+                marginBottom: 30,
+                top: -10,
+              }}
+            />
+            <View style={FormStyles.labelWrapper}>
+              <Text style={FormStyles.label}> Email </Text>
+            </View>
+            {/* <TextInput
             style={FormStyles.input}
             autoCompleteType="email"
             onChangeText={(text) => onChange({name: 'email', value: text})}
             value={values.email}
             placeholder="Enter Email"
           /> */}
-          <Input
-            autoCompleteType="email"
-            placeholder=" Enter a JSU email"
-            leftIcon={<FontAwesome5 name="envelope" size={20} color="black" />}
-            onChangeText={(text) => onChange({name: 'email', value: text})}
-            value={values.email}
-          />
-          {errors.email && <Text style={FormStyles.error}>{errors.email}</Text>}
-          <TouchableOpacity style={FormStyles.button} onPress={onSubmit}>
-            <Text style={FormStyles.buttonText}>Send</Text>
-          </TouchableOpacity>
-          <View style={FormStyles.links}>
-            <TouchableWithoutFeedback
-              onPress={() => props.onStateChange('signIn', {})}>
-              <Text style={FormStyles.links}>Back to Sign In</Text>
-            </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback
-              onPress={() => props.onStateChange('changePassword', {})}>
-              <Text style={FormStyles.links}>Change Password</Text>
-            </TouchableWithoutFeedback>
+            <Input
+              autoCompleteType="email"
+              placeholder=" Enter a JSU email"
+              leftIcon={
+                <FontAwesome5 name="envelope" size={20} color="black" />
+              }
+              onChangeText={(text) => onChange({name: 'email', value: text})}
+              value={values.email}
+            />
+            {errors.email && (
+              <Text style={FormStyles.error}>{errors.email}</Text>
+            )}
+            <TouchableOpacity style={FormStyles.button} onPress={onSubmit}>
+              <Text style={FormStyles.buttonText}>Send</Text>
+            </TouchableOpacity>
+            <View style={FormStyles.links}>
+              <TouchableWithoutFeedback
+                onPress={() => props.onStateChange('signIn', {})}>
+                <Text style={FormStyles.links}>Back to Sign In</Text>
+              </TouchableWithoutFeedback>
+              <TouchableWithoutFeedback
+                onPress={() => props.onStateChange('changePassword', {})}>
+                <Text style={FormStyles.links}>Change Password</Text>
+              </TouchableWithoutFeedback>
+            </View>
+            {error && <Text style={FormStyles.error}>{error}</Text>}
+            {/* {error && <ErrorMessage error={error} setError={setError} />} */}
           </View>
-          {error && <Text style={FormStyles.error}>{error}</Text>}
-          {/* {error && <ErrorMessage error={error} setError={setError} />} */}
         </View>
       </View>
     );

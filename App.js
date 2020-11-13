@@ -109,7 +109,7 @@ export default function App() {
       onPress={() => {
         Keyboard.dismiss();
       }}>
-      {/* <SafeAreaView> */}
+      <SafeAreaView style={styles.safearea}>
       <View style={globalStyles.container}>
         <NavigationContainer>
           <Authenticator
@@ -129,7 +129,15 @@ export default function App() {
           </Authenticator>
         </NavigationContainer>
       </View>
-      {/* </SafeAreaView> */}
+      </SafeAreaView>
     </TouchableWithoutFeedback>
   );
 }
+
+const styles = StyleSheet.create({
+  safearea: {
+    flex: 1,
+    backgroundColor: 'white',
+    height: windowHeight,
+  },
+});

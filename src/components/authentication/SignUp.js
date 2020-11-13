@@ -6,12 +6,14 @@ import {
   TextInput,
   TouchableOpacity,
   Alert,
+  Image,
 } from 'react-native';
 import {validateJSUEmail, validatePassword} from './validation'; //error handling is imported from here
 import {Auth} from 'aws-amplify';
 import {FormStyles} from '../../styles/FormStyles'; //styles are imported from here
 import {Input} from 'react-native-elements';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import {Divider} from 'react-native-paper';
 
 export default function SignUp(props) {
   const [state, setState] = useState({
@@ -44,7 +46,23 @@ export default function SignUp(props) {
     //code will run when in 'signUp' state
     return (
       <View style={FormStyles.container}>
+        <Image
+          style={FormStyles.logo}
+          source={require('../assets/logos/pawlogo.png')}
+        />
+        <View style={FormStyles.bottomview}>
         <Text style={FormStyles.title}>Sign Up</Text>
+        <Divider
+            style={{
+              backgroundColor: 'black',
+              height: 2,
+              width: 250,
+              borderRadius: 2,
+              alignSelf: 'center',
+              marginBottom: 30,
+              top: -10,
+            }}
+          />
         <Text style={FormStyles.label}>Email</Text>
         {/* <TextInput //email input field
           style={FormStyles.input}
@@ -110,6 +128,7 @@ export default function SignUp(props) {
             color="black"
             accessibilityLabel="back to confirm code"
           />
+          </View>
         </View>
       </View>
     );
