@@ -7,6 +7,7 @@ import KneeScooter from './Tips Screens/kneescooter';
 import Nutrition from './Tips Screens/nutrition';
 import {NavItem} from 'aws-amplify-react';
 import {SafeAreaView} from 'react-navigation';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const windowWidth = Dimensions.get('window').width;
 const Tab = createMaterialTopTabNavigator();

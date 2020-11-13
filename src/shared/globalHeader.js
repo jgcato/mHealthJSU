@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   StyleSheet,
   Dimensions,
-  SafeAreaView
+  SafeAreaView,
 } from 'react-native';
 import {Header, Button} from 'react-native-elements';
 import {Auth} from 'aws-amplify';
@@ -45,6 +45,10 @@ export default function GlobalHeader({headerText}) {
           paddingBottom: 20,
           justifyContent: 'center',
           alignItems: 'center',
+          shadowRadius: 5,
+          shadowOpacity: 1,
+          shadowColor: 'black',
+          shadowOffset: {width: 0, height: 1},
         }}
         centerComponent={{
           text: headerText,

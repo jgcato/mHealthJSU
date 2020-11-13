@@ -1,9 +1,12 @@
 import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 
 export default function DoctorsOffice() {
   return (
     <View style={styles.container}>
+       <ScrollView>
+        <View onStartShouldSetResponder={() => true}>
       <Text style={styles.tip}>
         {' '}
         <Text style={styles.number}>1.</Text> Follow-up surgery visits are a time for you to inquire about any concerns or questions
@@ -20,6 +23,8 @@ export default function DoctorsOffice() {
         {'\n'}
         {'\n'}
       </Text>
+      </View>
+      </ScrollView>
     </View>
   );
 }

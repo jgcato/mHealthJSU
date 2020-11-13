@@ -6,12 +6,13 @@ export default function Nutrition() {
   return (
     <View style={styles.container}>
       <ScrollView>
+      <View onStartShouldSetResponder={() => true}>
         <Text
           style={{textAlign: 'center', fontSize: 18, color: 'midnightblue'}}>
           Being that you can't move around and burn calories as much as you
           normally would, it is necessary to change your eating habits while you
-          are temporarily inactive. Consider some of these tips on how to
-          prevent excessive weight gain while injured:
+  are temporarily inactive. {"\n"}{"\n"} <Text style={{fontWeight: '200'}}>Consider some of these tips on how to
+          prevent excessive weight gain while injured:</Text>
         </Text>
         <Text style={styles.tip}>
           {' '}
@@ -35,14 +36,14 @@ export default function Nutrition() {
           satchel, purse, or grocery bag when you have to carry things from room
           to room
           {'\n'}
-          {'\n'}
         </Text>
         <Text
-          style={{textAlign: 'center', fontSize: 15, color: 'midnightblue'}}>
+          style={{textAlign: 'center', fontSize: 17, color: 'midnightblue', fontWeight: '200'}}>
           If you would like to adjust your diet to suit a temporarily less
-          active lifestyle contact: Wellness Educator, Coach Jack at
-          shannon.a.jackson@jsums.edu
+          active lifestyle contact: {"\n"} <Text style={{fontWeight: '400'}}>Wellness Educator, Coach Jack {"\n"}
+          shannon.a.jackson@jsums.edu</Text> 
         </Text>
+        </View>
       </ScrollView>
     </View>
   );

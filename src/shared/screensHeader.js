@@ -53,14 +53,19 @@ export default function ScreenHeader({headerText}) {
           paddingBottom: 20,
           justifyContent: 'center',
           alignItems: 'center',
+          shadowRadius: 4,
+          shadowOpacity: 1,
+          shadowColor: '#4F8EF7',
+          shadowOffset: {width: 0, height: 1},
         }}
         leftComponent={<Back />}
         centerComponent={{
           text: headerText,
           style: {
-            color: '#4F8EF7',
+            //color: '#4F8EF7',
+            color: 'black',
             fontWeight: 'bold',
-            fontSize: 20,
+            fontSize: 25,
           },
         }}
         rightComponent={<SignOut />}

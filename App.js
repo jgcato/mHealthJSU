@@ -30,6 +30,7 @@ import Youtube from './src/components/pages/youtube';
 import {globalStyles} from './src/styles/global';
 import GlobadHeader from './src/shared/globalHeader';
 import ScreenHeader from './src/shared/screensHeader';
+import { ScrollView } from 'react-native-gesture-handler';
 
 Amplify.configure(awsconfig); //loads config file for AWS Amplify
 
@@ -110,25 +111,25 @@ export default function App() {
         Keyboard.dismiss();
       }}>
       <SafeAreaView style={styles.safearea}>
-      <View style={globalStyles.container}>
-        <NavigationContainer>
-          <Authenticator
-            usernameAttributes="email"
-            hideDefault={true}
-            authState="signIn"
-            onStateChange={(authState) =>
-              console.log('authState...', authState)
-            }>
-            <HomeStack />
-            <SignUp />
-            <SignIn />
-            <ConfirmSignUp />
-            <ConfirmSignIn />
-            <ForgotPassword />
-            <ChangePassword />
-          </Authenticator>
-        </NavigationContainer>
-      </View>
+        <View style={globalStyles.container}>
+          <NavigationContainer>
+            <Authenticator
+              usernameAttributes="email"
+              hideDefault={true}
+              authState="signIn"
+              onStateChange={(authState) =>
+                console.log('authState...', authState)
+              }>
+              <HomeStack />
+              <SignUp />
+              <SignIn />
+              <ConfirmSignUp />
+              <ConfirmSignIn />
+              <ForgotPassword />
+              <ChangePassword />
+            </Authenticator>
+          </NavigationContainer>
+        </View>
       </SafeAreaView>
     </TouchableWithoutFeedback>
   );
@@ -137,7 +138,7 @@ export default function App() {
 const styles = StyleSheet.create({
   safearea: {
     flex: 1,
-    backgroundColor: 'white',
-    height: windowHeight,
+    backgroundColor: '#eee',
+    //height: windowHeight,
   },
 });
