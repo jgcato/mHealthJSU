@@ -36,7 +36,7 @@ export default function ScreenHeader({headerText}) {
     return (
       <View>
         <TouchableOpacity onPress={() => navigation.navigate('Homepage')}>
-          <Ionicons name="arrow-back" size={30} color="#4F8EF7" />
+          <Ionicons name="arrow-back" size={30} color="black" />
         </TouchableOpacity>
       </View>
     );
@@ -53,22 +53,27 @@ export default function ScreenHeader({headerText}) {
           paddingBottom: 20,
           justifyContent: 'center',
           alignItems: 'center',
-          shadowRadius: 4,
+          shadowRadius: 3,
           shadowOpacity: 1,
-          shadowColor: '#4F8EF7',
+          shadowColor: 'slategrey',
+          // shadowColor: '#4F8EF7',
           shadowOffset: {width: 0, height: 1},
         }}
         leftComponent={<Back />}
         centerComponent={{
           text: headerText,
           style: {
-            //color: '#4F8EF7',
             color: 'black',
             fontWeight: 'bold',
-            fontSize: 25,
+            fontSize: 29,
+            shadowRadius: 2,
+            shadowOpacity: 5,
+            shadowColor: 'slategrey',
+            // shadowColor: '#4F8EF7',
+            shadowOffset: {width: 0, height: 1},
           },
         }}
-        rightComponent={<SignOut />}
+        //rightComponent={<SignOut />}
         placement="center"
       />
     </View>
@@ -80,11 +85,11 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   signOut: {
-    color: '#4F8EF7',
+    color: 'black',
     fontWeight: 'bold',
-    borderWidth: 1.7,
+    borderWidth: 1,
     borderRadius: 8,
-    borderColor: '#4F8EF7',
+    borderColor: 'midnightblue',
     padding: 4,
   },
   center: {

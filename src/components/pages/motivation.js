@@ -1,11 +1,13 @@
 import React from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
+import {Text, View, StyleSheet, Image, ImageBackground} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
-import {Card} from 'react-native-elements';
+import {Card, Divider} from 'react-native-elements';
 
 export default function Motivation() {
   return (
     <View style={styles.container}>
+    <ImageBackground source={require('../assets/appPics/brick.jpg')} style={width=400}>
+    
       <ScrollView>
         <View onStartShouldSetResponder={() => true}>
           <Card containerStyle={styles.cardcontainer}>
@@ -242,6 +244,8 @@ export default function Motivation() {
           </Card>
         </View>
       </ScrollView>
+  
+    </ImageBackground>
     </View>
   );
 }
@@ -249,15 +253,16 @@ export default function Motivation() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 45,
+    margin: 5,
   },
   scroll: {
     flex: 1,
   },
   cardcontainer: {
-    // shadowRadius: 7,
-    // shadowOpacity: 0.5,
-    // shadowColor: 'gray',
-    // shadowOffset: {width: 2, height: 2},
+    margin: 40,
+    shadowRadius: 5,
+    shadowOpacity: 0.5,
+    shadowColor: 'grey',
+    shadowOffset: {width: 3, height: 2},
   },
 });

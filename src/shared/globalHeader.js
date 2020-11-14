@@ -27,7 +27,7 @@ function SignOut(props) {
         //backToSignIn
         onPress={() => Auth.signOut()}>
         <Text style={styles.signOut}>sign out</Text>
-        {/* <FontAwesome5 name="sign-out-alt" size={25} color="#4F8EF7" /> */}
+        {/* <FontAwesome5 name="sign-out-alt" size={25} color="black" /> */}
       </TouchableOpacity>
     </View>
   );
@@ -47,13 +47,14 @@ export default function GlobalHeader({headerText}) {
           alignItems: 'center',
           shadowRadius: 5,
           shadowOpacity: 1,
-          shadowColor: 'black',
+          shadowColor: 'midnightblue',
           shadowOffset: {width: 0, height: 1},
         }}
         centerComponent={{
           text: headerText,
           style: {
-            color: '#4F8EF7',
+            //color: '#4F8EF7',
+            color: 'black',
             fontWeight: 'bold',
             fontSize: 40,
           },
@@ -70,11 +71,11 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   signOut: {
-    color: '#4F8EF7',
+    color: 'black',
     fontWeight: 'bold',
-    borderWidth: 1.7,
+    borderWidth: 1,
     borderRadius: 8,
-    borderColor: '#4F8EF7',
+    borderColor: 'midnightblue',
     padding: 4,
   },
   center: {

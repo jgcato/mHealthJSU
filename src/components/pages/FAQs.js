@@ -22,29 +22,17 @@ const windowHeight = Dimensions.get('window').height;
 export default function FAQs() {
   return (
     <View style={styles.container}>
-      <View>
-        <Image
+      <ScrollView>
+      <Divider
           style={{
-            width: windowWidth,
-            height: 120,
-            alignSelf: 'center',
-            marginTop: 30,
-            top: -30,
-          }}
-          source={require('../assets/appPics/sideplant.jpg')}
-        />
-        <Divider
-          style={{
-            backgroundColor: 'red',
-            height: 4,
+            backgroundColor: 'darkblue',
+            height: 2,
             width: 300,
             borderRadius: 10,
             alignSelf: 'center',
-            top: -15,
+            marginTop: 20,
           }}
         />
-      </View>
-      <ScrollView>
         <View onStartShouldSetResponder={() => true}>
           <Card>
             <Card.Title style={styles.question}>

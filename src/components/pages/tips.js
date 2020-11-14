@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, StyleSheet, Image, Dimensions} from 'react-native';
+import {Text, View, StyleSheet, Image, Dimensions, ImageBackground} from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import Crutches from './Tips Screens/crutches';
 import DoctorsOffice from './Tips Screens/doctorsoffice';
@@ -34,7 +34,7 @@ export default function Tips() {
           marginTop: 5,
           marginBottom: 20,
         }}
-        source={require('../assets/appPics/plants.jpg')}
+        source={require('../assets/appPics/yougotthis.jpeg')}
       />
       <MyTabs />
     </View>
