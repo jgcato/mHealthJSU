@@ -51,8 +51,8 @@ export default function SignUp(props) {
           source={require('../assets/logos/pawlogo.png')}
         />
         <View style={FormStyles.bottomview}>
-        <Text style={FormStyles.title}>Sign Up</Text>
-        <Divider
+          <Text style={FormStyles.title}>Sign Up</Text>
+          <Divider
             style={{
               backgroundColor: 'black',
               height: 2,
@@ -63,71 +63,56 @@ export default function SignUp(props) {
               top: -10,
             }}
           />
-        <Text style={FormStyles.label}>Email</Text>
-        {/* <TextInput //email input field
-          style={FormStyles.input}
-          onChangeText={(text) =>
-            setState({...state, email: text.toLowerCase()})
-          }
-          placeholder="enter email"
-          value={state.email}
-        /> */}
-        <Input
-          placeholder=" Enter a JSU email"
-          leftIcon={<FontAwesome5 name="envelope" size={20} color="black" />}
-          onChangeText={(text) =>
-            setState({...state, email: text.toLowerCase()})
-          }
-          value={state.email}
-        />
-        <Text
-          //displays email error
-          style={FormStyles.error}>
-          {error.email}
-        </Text>
-        <Text style={FormStyles.label}>Password</Text>
-        {/* <TextInput //password input field
-          style={FormStyles.input}
-          onChangeText={(text) => setState({...state, password: text})}
-          placeholder="enter password"
-          value={state.password}
-          secureTextEntry={true}
-        /> */}
-         <Input
-          placeholder=" Enter password"
-          leftIcon={<FontAwesome5 name="lock" size={20} color="black" />}
-          onChangeText={(text) => setState({...state, password: text})}
-          value={state.password}
-          secureTextEntry={true}
-        />
-        <Text
-          //displays password error
-          style={FormStyles.error}>
-          {error.password}
-        </Text>
-
-        <TouchableOpacity
-          //sign up button
-          style={FormStyles.button}
-          onPress={() => onSubmit()}>
-          <Text style={FormStyles.buttonText}>Sign Up</Text>
-        </TouchableOpacity>
-
-        <View
-          //encompasses "back to Sign In" & "back to Sign Up" buttons
-          style={FormStyles.links}>
-          <Button //back to signIn
-            onPress={() => props.onStateChange('signIn', {})}
-            title="back to Sign In"
-            color="black"
-            accessibilityLabel="back to signIn"
+          <Text style={FormStyles.label}>Email</Text>
+          <Input
+            placeholder=" Enter a JSU email"
+            leftIcon={<FontAwesome5 name="envelope" size={20} color="black" />}
+            onChangeText={(text) =>
+              setState({...state, email: text.toLowerCase()})
+            }
+            value={state.email}
           />
-          <Button //back to signUp
-            onPress={() => props.onStateChange('confirmSignUp', {})}
-            title="confirm a code"
-            color="black"
-            accessibilityLabel="back to confirm code"
+          <Text
+            //displays email error
+            style={FormStyles.error}>
+            {error.email}
+          </Text>
+          <Text style={FormStyles.label}>Password</Text>
+          <Input
+            placeholder=" Enter password"
+            leftIcon={<FontAwesome5 name="lock" size={20} color="black" />}
+            onChangeText={(text) => setState({...state, password: text})}
+            value={state.password}
+            secureTextEntry={true}
           />
+          <Text
+            //displays password error
+            style={FormStyles.error}>
+            {error.password}
+          </Text>
+
+          <TouchableOpacity
+            //sign up button
+            style={FormStyles.button}
+            onPress={() => onSubmit()}>
+            <Text style={FormStyles.buttonText}>Sign Up</Text>
+          </TouchableOpacity>
+
+          <View
+            //encompasses "back to Sign In" & "back to Sign Up" buttons
+            style={FormStyles.links}>
+            <Button //back to signIn
+              onPress={() => props.onStateChange('signIn', {})}
+              title="back to Sign In"
+              color="black"
+              accessibilityLabel="back to signIn"
+            />
+            <Button //back to signUp
+              onPress={() => props.onStateChange('confirmSignUp', {})}
+              title="confirm a code"
+              color="black"
+              accessibilityLabel="back to confirm code"
+            />
           </View>
         </View>
       </View>

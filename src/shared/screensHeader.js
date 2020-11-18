@@ -1,36 +1,13 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  Dimensions,
-} from 'react-native';
-import {Header, Button} from 'react-native-elements';
-import {Auth} from 'aws-amplify';
+import {View, TouchableOpacity, StyleSheet, Dimensions} from 'react-native';
+import {Header} from 'react-native-elements';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import NavDrawer from './navDrawer';
-import {NavigationContainer, useNavigation} from '@react-navigation/native';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-import Homepage from '../components/pages/Homepage';
-import FAQs from '../components/pages/FAQs';
+import {useNavigation} from '@react-navigation/native';
 
 const windowWidth = Dimensions.get('window').width;
-//const windowHeight = Dimensions.get('window').height;
-
-function SignOut(props) {
-  return (
-    <View>
-      <TouchableOpacity
-        //backToSignIn
-        onPress={() => Auth.signOut()}>
-        <Text style={styles.signOut}>sign out</Text>
-      </TouchableOpacity>
-    </View>
-  );
-}
 
 export default function ScreenHeader({headerText}) {
+  //back button that takes user to homepage
   const navigation = useNavigation();
   function Back() {
     return (
@@ -59,7 +36,7 @@ export default function ScreenHeader({headerText}) {
           // shadowColor: '#4F8EF7',
           shadowOffset: {width: 0, height: 1},
         }}
-        leftComponent={<Back />}
+        leftComponent={<Back />} //back button
         centerComponent={{
           text: headerText,
           style: {
@@ -69,11 +46,9 @@ export default function ScreenHeader({headerText}) {
             shadowRadius: 2,
             shadowOpacity: 5,
             shadowColor: 'slategrey',
-            // shadowColor: '#4F8EF7',
             shadowOffset: {width: 0, height: 1},
           },
         }}
-        //rightComponent={<SignOut />}
         placement="center"
       />
     </View>
@@ -83,14 +58,6 @@ export default function ScreenHeader({headerText}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  signOut: {
-    color: 'black',
-    fontWeight: 'bold',
-    borderWidth: 1,
-    borderRadius: 8,
-    borderColor: 'midnightblue',
-    padding: 4,
   },
   center: {
     color: 'darkblue',

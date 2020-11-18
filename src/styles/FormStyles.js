@@ -1,4 +1,4 @@
-//this styling is for the signIn, signUp, forgotPassword, confirmSignUp, changePassword components
+//this styling is for the signIn, signUp, forgotPassword, confirmSignUp, changePassword components as well as the container for various pages
 
 import {StyleSheet, Dimensions} from 'react-native';
 
@@ -82,7 +82,7 @@ export const FormStyles = StyleSheet.create({
     shadowRadius: 20,
     shadowOpacity: 1,
     shadowColor: 'black',
-    shadowOffset: {width: 0, height: 20}
+    shadowOffset: {width: 0, height: 20},
   },
   logo: {
     width: 300,

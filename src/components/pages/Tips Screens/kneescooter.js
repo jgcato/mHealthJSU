@@ -1,17 +1,9 @@
 import React from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  ImageBackground,
-  Dimensions,
-  ScrollView,
-} from 'react-native';
-
-const windowWidth = Dimensions.get('window').width;
+import {Text, View, StyleSheet, ScrollView} from 'react-native';
 
 export default function KneeScooter() {
   return (
+    //onStartShouldSetResponder() enables scrolling for ScrollView which is disabled by TouchableWithoutFeedback in App.js file
     <View style={styles.container}>
       <ScrollView>
         <View onStartShouldSetResponder={() => true}>

@@ -5,21 +5,13 @@ import {
   TouchableOpacity,
   StyleSheet,
   Dimensions,
-  SafeAreaView,
 } from 'react-native';
-import {Header, Button} from 'react-native-elements';
+import {Header} from 'react-native-elements';
 import {Auth} from 'aws-amplify';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import NavDrawer from './navDrawer';
-import {NavigationContainer, useNavigation} from '@react-navigation/native';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-import Homepage from '../components/pages/Homepage';
-import FAQs from '../components/pages/FAQs';
 
 const windowWidth = Dimensions.get('window').width;
-//const windowHeight = Dimensions.get('window').height;
 
+//sign out button component
 function SignOut(props) {
   return (
     <View>
@@ -27,7 +19,6 @@ function SignOut(props) {
         //backToSignIn
         onPress={() => Auth.signOut()}>
         <Text style={styles.signOut}>sign out</Text>
-        {/* <FontAwesome5 name="sign-out-alt" size={25} color="black" /> */}
       </TouchableOpacity>
     </View>
   );
@@ -51,15 +42,15 @@ export default function GlobalHeader({headerText}) {
           shadowOffset: {width: 0, height: 1},
         }}
         centerComponent={{
+          //headerTitle
           text: headerText,
           style: {
-            //color: '#4F8EF7',
             color: 'black',
             fontWeight: 'bold',
             fontSize: 40,
           },
         }}
-        rightComponent={<SignOut />}
+        rightComponent={<SignOut />} //signOut button
         placement="center"
       />
     </View>

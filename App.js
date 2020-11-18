@@ -138,7 +138,7 @@ export default function App() {
 const styles = StyleSheet.create({
   safearea: {
     flex: 1,
-    backgroundColor: '#eee',
+    backgroundColor: 'white',
     //height: windowHeight,
   },
 });

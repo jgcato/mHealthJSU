@@ -1,14 +1,18 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import Ada from '../pages/CampService Screens/ada';
-import Counseling from '../pages/CampService Screens/counseling';
+import Ada from './CampService Screens/ada';
+import Counseling from './CampService Screens/counseling';
 
 const Tab = createMaterialTopTabNavigator();
 
 function MyTabs() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      tabBarOptions={{
+        labelStyle: {fontSize: 15, fontWeight: '400'},
+        indicatorStyle: {backgroundColor: 'darkblue'},
+      }}>
       <Tab.Screen name="Counseling" component={Counseling} />
       <Tab.Screen name="ADA Info" component={Ada} />
     </Tab.Navigator>

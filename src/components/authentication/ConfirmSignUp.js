@@ -1,13 +1,5 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  Button,
-  TextInput,
-  TouchableOpacity,
-  Alert,
-  Image,
-} from 'react-native';
+import {View, Text, Button, TouchableOpacity, Alert, Image} from 'react-native';
 import {validateJSUEmail} from './validation'; //error handling imported from here
 import {Auth} from 'aws-amplify';
 import {FormStyles} from '../../styles/FormStyles'; //styling imported from here

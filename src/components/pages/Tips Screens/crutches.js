@@ -4,12 +4,13 @@ import {ScrollView} from 'react-native-gesture-handler';
 
 export default function Crutches() {
   return (
+    //onStartShouldSetResponder() enables scrolling for ScrollView which is disabled by TouchableWithoutFeedback in App.js file
     <View style={styles.container}>
       <ScrollView>
         <View onStartShouldSetResponder={() => true}>
           <Text style={styles.tip}>
             {' '}
-            <Text style={styles.number}>1.</Text> It may be helpfup to purchase
+            <Text style={styles.number}>1.</Text> It may be helpful to purchase
             a shower stool until you are cleared to put pressure on injured site
             {'\n'}
             {'\n'}

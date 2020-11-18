@@ -2,13 +2,11 @@ import React from 'react';
 import {
   View,
   Text,
-  TextInput,
   TouchableOpacity,
   TouchableWithoutFeedback,
   Image,
 } from 'react-native';
 import {Auth} from 'aws-amplify';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import {FormStyles} from '../../styles/FormStyles';
 import useForm from '../../useForm';
 import {validateEmail} from './validation';
@@ -67,13 +65,6 @@ export default function ForgotPassword(props) {
             <View style={FormStyles.labelWrapper}>
               <Text style={FormStyles.label}> Email </Text>
             </View>
-            {/* <TextInput
-            style={FormStyles.input}
-            autoCompleteType="email"
-            onChangeText={(text) => onChange({name: 'email', value: text})}
-            value={values.email}
-            placeholder="Enter Email"
-          /> */}
             <Input
               autoCompleteType="email"
               placeholder=" Enter a JSU email"
