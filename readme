@@ -12,3 +12,5 @@ The "Assets" folder contains images used in the application
 The "Authentication" folder contains pages for signing up and login in . 
 
 The "Pages" folder contain different pages in the app that the user is able to navigate to from the homepage
+
+Currently , the app code is present in the TestJL branch and have not been merged with the master branch yet
