@@ -3,4 +3,12 @@ The project seeks to champion strong mental health among injured student-athlete
 
 This is the source code for mHealthJSU. An application created for a Fall 2020 Senior Project assignment by Vincent Langat, Jahelle Cato, Jetnya Simmons, and Taylor Collins. 
 
-The code for the various pages in the app are present in Src -> Components. 
+The code for the various pages in the app are present in Src -> Components.
+
+Inside the "Components" folder:
+
+The "Assets" folder contains images used in the application 
+
+The "Authentication" folder contains pages for signing up and login in . 
+
+The "Pages" folder contain different pages in the app that the user is able to navigate to from the homepage
