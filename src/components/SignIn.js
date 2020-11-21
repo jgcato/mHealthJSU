@@ -23,9 +23,9 @@ export default function SignIn(props) {
     //displays errors when password and email are entered incorrectly
     const emailError = validateEmail(state.email);
     const passwordError = validatePassword(state.password);
-    if (emailError || passwordError)
+    if (emailError || passwordError) {
       setErrors({email: emailError, password: passwordError});
-    else {
+    } else {
       try {
         const user = await Auth.signIn({
           username: state.email,

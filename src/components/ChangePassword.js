@@ -115,5 +115,7 @@ export default function ChangePassword(props) {
         </View>
       </View>
     );
-  } else return <></>;
+  } else {
+    return <></>;
+  }
 }

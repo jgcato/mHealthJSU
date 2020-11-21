@@ -74,5 +74,7 @@ export default function ForgotPassword(props) {
         </View>
       </View>
     );
-  } else return <></>;
+  } else {
+    return <></>;
+  }
 }

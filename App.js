@@ -27,7 +27,9 @@ function Home(props) {
         />
       </View>
     );
-  } else return <></>;
+  } else {
+    return <></>;
+  }
 }
 
 export default function App() {
